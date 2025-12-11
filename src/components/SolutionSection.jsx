@@ -8,7 +8,7 @@ const SolutionSection = () => {
             <div className="container">
                 <h2 className="section-title">Our Solution</h2>
                 <h3 className="solution-headline">
-                    A Web Platform That Brings Specialists to Rural Communities Through AI + Telemedicine
+                    A Web Platform That Brings Specialists to Rural Communities Through SRTA
                 </h3>
                 <div className="solution-grid">
                     <div className="feature-card">

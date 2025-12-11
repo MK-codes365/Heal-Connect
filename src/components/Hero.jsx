@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="hero-section">
             <div className="hero-overlay"></div>
@@ -14,7 +17,7 @@ const Hero = () => {
                     Submit symptoms, get AI urgency scoring, and connect with doctors without traveling long distances.
                 </p>
                 <div className="hero-actions">
-                    <button className="btn-primary" onClick={() => alert("Flow starting soon...")}>Get Started</button>
+                    <button className="btn-primary" onClick={() => navigate('/login')}>Get Started</button>
                 </div>
             </div>
         </div>

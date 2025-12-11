@@ -36,7 +36,6 @@
     font-weight: 600;
 }
 
-/* Patient Button Style */
 .role-btn.patient {
     background: rgba(20, 184, 166, 0.1);
     border: 2px solid #14b8a6;
@@ -49,7 +48,6 @@
     box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
 }
 
-/* Doctor Button Style */
 .role-btn.doctor {
     background: rgba(59, 130, 246, 0.1);
     border: 2px solid #3b82f6;
@@ -62,7 +60,6 @@
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
 }
 
-/* Admin Button Style */
 .role-btn.admin {
     background: rgba(99, 102, 241, 0.1);
     border: 2px solid #6366f1;

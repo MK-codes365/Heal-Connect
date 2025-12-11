@@ -13,8 +13,8 @@ const Footer = () => {
                     <Link to="/terms">Terms</Link>
                 </div>
                 <div className="footer-credits">
-                    <p>© 2024 Telemedicine + AI Diagnostic.</p>
-                    <p className="team-credit">Built by <span>Fantastic Four</span></p>
+                    <p>© 2024 Smart Rural TeleHealth Assistant (SRTA).</p>
+                    <p className="team-credit">Built with ❤️ by <span>Fantastic Four</span></p>
                 </div>
             </div>
         </footer>

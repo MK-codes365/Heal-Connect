@@ -13,8 +13,8 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container container">
                 <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                    <img src="/logo.png" alt="Telemedicine AI" className="navbar-icon" />
-                    TeleMed AI
+                    <img src="/logo.png" alt="Smart Rural TeleHealth Assistant" className="navbar-icon" />
+                    SRTA
                 </Link>
                 <div className="menu-icon" onClick={handleClick}>
                     {click ? <FaTimes /> : <FaBars />}
