@@ -19,7 +19,7 @@
 }
 
 .metric-value {
-    font-size: 4rem;
+    font-size: 3.5rem !important;
     font-weight: 800;
     background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
     -webkit-background-clip: text;
@@ -29,7 +29,7 @@
 }
 
 .metric-label {
-    font-size: 1.25rem;
+    font-size: 1.28rem !important;
     color: #e2e8f0;
     font-weight: 500;
 }

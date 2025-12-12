@@ -1,19 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { FaUsers, FaChartBar, FaClipboardList, FaComments } from 'react-icons/fa';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
-
-    const tiles = [
-        { icon: FaUsers, title: 'Manage Users', desc: 'View and manage all system users', path: '/dashboard/admin/users', color: '#14b8a6' },
-        { icon: FaChartBar, title: 'Analytics Dashboard', desc: 'View system statistics and insights', path: '/dashboard/admin/analytics', color: '#3b82f6' },
-        { icon: FaClipboardList, title: 'System Logs', desc: 'Monitor system activity and errors', path: '/dashboard/admin/logs', color: '#8b5cf6' },
-        { icon: FaComments, title: 'Feedback & Issues', desc: 'Manage user feedback and reports', path: '/dashboard/admin/feedback', color: '#f59e0b' }
-    ];
 
     return (
         <div className="admin-dashboard">
@@ -24,15 +16,32 @@ const AdminDashboard = () => {
                 </div>
                 <button onClick={logout} className="logout-btn">Logout</button>
             </div>
-            
-            <div className="tiles-grid">
-                {tiles.map((tile, idx) => (
-                    <div key={idx} className="dashboard-tile" onClick={() => navigate(tile.path)} style={{ borderColor: tile.color }}>
-                        <tile.icon className="tile-icon" style={{ color: tile.color }} />
-                        <h3>{tile.title}</h3>
-                        <p>{tile.desc}</p>
-                    </div>
-                ))}
+
+            <div className="quick-actions">
+                <div className="action-card" onClick={() => navigate('/dashboard/admin/users')}>
+                    <h3>👥 User Management</h3>
+                    <p>Manage patients, doctors, and health workers</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/admin/analytics')}>
+                    <h3>📊 Analytics</h3>
+                    <p>View system metrics and performance</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/admin/verification')}>
+                    <h3>✅ Doctor Verification</h3>
+                    <p>Review and approve doctor credentials</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/admin/appointments')}>
+                    <h3>📅 Appointments</h3>
+                    <p>Oversee all platform appointments</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/admin/messaging')}>
+                    <h3>💬 Messaging Monitor</h3>
+                    <p>Track messaging activity and compliance</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/admin/settings')}>
+                    <h3>⚙️ Settings</h3>
+                    <p>Configure platform preferences</p>
+                </div>
             </div>
         </div>
     );

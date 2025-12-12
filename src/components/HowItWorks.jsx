@@ -1,34 +1,67 @@
 import React from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import { 
+    FaCommentMedical, 
+    FaStethoscope, 
+    FaVideo, 
+    FaFilePrescription, 
+    FaShippingFast,
+    FaAngleRight 
+} from 'react-icons/fa';
 import './HowItWorks.css';
+
+const steps = [
+    {
+        icon: <FaCommentMedical />,
+        title: "Report Symptoms",
+        desc: "Describe your condition to our multilingual AI Health Assistant."
+    },
+    {
+        icon: <FaStethoscope />,
+        title: "Smart Triage",
+        desc: "Get instant urgency matching & specialist recommendation."
+    },
+    {
+        icon: <FaVideo />,
+        title: "Instant Consult",
+        desc: "Connect via video with the right doctor in minutes."
+    },
+    {
+        icon: <FaFilePrescription />,
+        title: "Digital Rx",
+        desc: "Receive a secure, digital prescription immediately after the call."
+    },
+    {
+        icon: <FaShippingFast />,
+        title: "Order Meds",
+        desc: "One-click ordering from trusted pharmacies delivered to your door."
+    }
+];
 
 const HowItWorks = () => {
     return (
         <section className="how-it-works-section">
             <div className="container">
                 <h2 className="section-title">How It Works</h2>
-                <div className="timeline">
-                    <div className="step-item">
-                        <div className="step-number">1</div>
-                        <h3>Record Symptoms</h3>
-                        <p>User uploads photo/audio and enters symptoms.</p>
-                    </div>
-                    <div className="arrow-container">
-                        <FaArrowRight className="timeline-arrow" />
-                    </div>
-                    <div className="step-item">
-                        <div className="step-number">2</div>
-                        <h3>AI Triage</h3>
-                        <p>System predicts urgency: Low / Medium / High.</p>
-                    </div>
-                    <div className="arrow-container">
-                        <FaArrowRight className="timeline-arrow" />
-                    </div>
-                    <div className="step-item">
-                        <div className="step-number">3</div>
-                        <h3>Doctor Consult</h3>
-                        <p>Doctor reviews case and starts video consult.</p>
-                    </div>
+                <div className="timeline-container">
+                    {steps.map((step, index) => (
+                        <React.Fragment key={index}>
+                            <div className="timeline-item">
+                                <div className="step-icon">
+                                    {step.icon}
+                                    <span className="step-badge">{index + 1}</span>
+                                </div>
+                                <div className="timeline-content">
+                                    <h3>{step.title}</h3>
+                                    <p>{step.desc}</p>
+                                </div>
+                            </div>
+                            {index < steps.length - 1 && (
+                                <div className="arrow-connector">
+                                    <FaAngleRight />
+                                </div>
+                            )}
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
         </section>

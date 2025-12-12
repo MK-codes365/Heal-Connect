@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/logo.svg';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -12,8 +13,8 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container container">
-                <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                    <img src="/logo.svg" alt="HealConnect" className="navbar-icon" />
+                <Link to="/" className="navbar-logo" onClick={() => setClick(false)}>
+                    <img src={logo} alt="HealConnect" className="nav-logo-img" />
                     HealConnect
                 </Link>
                 <div className="menu-icon" onClick={handleClick}>

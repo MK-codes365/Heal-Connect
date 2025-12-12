@@ -13,7 +13,7 @@ const Footer = () => {
                     <Link to="/terms">Terms</Link>
                 </div>
                 <div className="footer-credits">
-                    <p>© 2024 Smart Rural TeleHealth Assistant (SRTA).</p>
+                    <p>&copy; {new Date().getFullYear()} HealConnect. All rights reserved.</p>
                     <p className="team-credit">Built with ❤️ by <span>Fantastic Four</span></p>
                 </div>
             </div>

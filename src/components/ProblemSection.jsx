@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCar, FaMoneyBillWave, FaHourglassHalf } from 'react-icons/fa';
+import { FaCar, FaRupeeSign, FaHourglassHalf } from 'react-icons/fa';
 import './ProblemSection.css';
 
 const ProblemSection = () => {
@@ -17,7 +17,7 @@ const ProblemSection = () => {
                         <p>Patients travel hours for basic consultations.</p>
                     </div>
                     <div className="problem-card">
-                        <FaMoneyBillWave className="problem-icon" />
+                        <FaRupeeSign className="problem-icon" />
                         <h3>High Costs</h3>
                         <p>expensive travel & consultation fees burden families.</p>
                     </div>

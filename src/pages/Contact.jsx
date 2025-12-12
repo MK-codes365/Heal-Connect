@@ -1,28 +1,73 @@
 import React from 'react';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import './Contact.css';
 
 const Contact = () => {
     return (
-        <div style={{ padding: '8rem 2rem', maxWidth: '800px', margin: '0 auto', color: '#e2e8f0' }}>
-            <h1 style={{ fontSize: '3rem', marginBottom: '2rem', color: '#38bdf8' }}>Contact Us</h1>
-            <p style={{ fontSize: '1.2rem', marginBottom: '3rem' }}>
-                Have questions or need support? Reach out to our team.
-            </p>
-            
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Name</label>
-                    <input type="text" placeholder="Your Name" style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid #475569', background: '#1e293b', color: 'white' }} />
+        <div className="contact-page">
+            <section className="contact-hero">
+                <div className="container">
+                    <h1 className="contact-title">Get in <span className="highlight">Touch</span></h1>
+                    <p className="contact-subtitle">Have questions? We'd love to hear from you. Reach out to the HealConnect team.</p>
                 </div>
-                <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Email</label>
-                    <input type="email" placeholder="your@email.com" style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid #475569', background: '#1e293b', color: 'white' }} />
+            </section>
+
+            <section className="contact-content">
+                <div className="container contact-grid">
+                    {/* Contact Info */}
+                    <div className="contact-info">
+                        <div className="info-card">
+                            <div className="icon-box">
+                                <FaPhoneAlt />
+                            </div>
+                            <div>
+                                <h3>Call Us</h3>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div className="info-card">
+                            <div className="icon-box">
+                                <FaEnvelope />
+                            </div>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>support@healconnect.in</p>
+                            </div>
+                        </div>
+                        <div className="info-card">
+                            <div className="icon-box">
+                                <FaMapMarkerAlt />
+                            </div>
+                            <div>
+                                <h3>Visit Us</h3>
+                                <p>UIET Kanpur, CSJM University Campus, Kanpur, Uttar Pradesh</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Contact Form */}
+                    <div className="contact-form-wrapper">
+                        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                            <h2>Send a Message</h2>
+                            <div className="form-group">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="John Doe" required />
+                            </div>
+                            <div className="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="john@example.com" required />
+                            </div>
+                            <div className="form-group">
+                                <label>Message</label>
+                                <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" className="btn-primary">
+                                Send Message <FaPaperPlane className="btn-icon" />
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>Message</label>
-                    <textarea rows="5" placeholder="How can we help?" style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: '1px solid #475569', background: '#1e293b', color: 'white' }}></textarea>
-                </div>
-                <button type="button" style={{ padding: '1rem 2rem', background: '#3b82f6', color: 'white', border: 'none', borderRadius: '8px', fontSize: '1.1rem', cursor: 'pointer', fontWeight: 'bold' }}>Send Message</button>
-            </form>
+            </section>
         </div>
     );
 };

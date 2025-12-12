@@ -26,8 +26,7 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setUser(null);
         localStorage.removeItem('user');
-        // Use window.location.replace to avoid back button issues
-        window.location.replace('/login');
+        window.location.href = '/login';
     };
 
     return (

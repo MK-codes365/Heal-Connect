@@ -11,14 +11,11 @@ const DoctorDashboard = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [urgencyFilter, setUrgencyFilter] = useState('all');
 
-    // Combine all cases for doctor review
     const allCases = [...mockCases, ...workerCases].filter(c => c.status !== 'closed');
 
-    // Sort by urgency: HIGH > MEDIUM > LOW
     const urgencyOrder = { HIGH: 1, MEDIUM: 2, LOW: 3 };
     const sortedCases = allCases.sort((a, b) => urgencyOrder[a.urgency] - urgencyOrder[b.urgency]);
 
-    // Filter cases
     const filteredCases = sortedCases.filter(c => {
         const matchesSearch = searchQuery === '' || 
             c.patientName.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -52,9 +49,24 @@ const DoctorDashboard = () => {
             <div className="dashboard-header">
                 <div>
                     <h1>Welcome, {user?.name}</h1>
-                    <p className="subtitle">Doctor Dashboard - Case Queue</p>
+                    <p className="subtitle">Doctor Dashboard</p>
                 </div>
                 <button onClick={logout} className="logout-btn">Logout</button>
+            </div>
+
+            <div className="quick-actions">
+                <div className="action-card" onClick={() => navigate('/dashboard/doctor/profile')}>
+                    <h3>👤 Profile</h3>
+                    <p>Manage your profile and availability</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/doctor/appointments')}>
+                    <h3>📅 Appointments</h3>
+                    <p>View and manage appointments</p>
+                </div>
+                <div className="action-card" onClick={() => navigate('/dashboard/doctor/messages')}>
+                    <h3>💬 Messages</h3>
+                    <p>Chat with patients</p>
+                </div>
             </div>
 
             <div className="stats-bar">

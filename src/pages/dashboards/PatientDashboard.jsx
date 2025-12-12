@@ -1,18 +1,56 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { FaClipboardList, FaFileAlt, FaComments, FaVideo } from 'react-icons/fa';
+import { FaRobot, FaUserMd, FaCalendarAlt, FaHistory, FaComments, FaPrescription } from 'react-icons/fa';
 import './PatientDashboard.css';
 
 const PatientDashboard = () => {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
 
-    const tiles = [
-        { icon: FaClipboardList, title: 'Start New Checkup', desc: 'Submit symptoms and get AI triage', path: '/dashboard/patient/checkup/new', color: '#14b8a6' },
-        { icon: FaFileAlt, title: 'My Previous Reports', desc: 'View your medical history', path: '/dashboard/patient/reports', color: '#3b82f6' },
-        { icon: FaComments, title: 'Doctor Responses', desc: 'Check doctor notes and prescriptions', path: '/dashboard/patient/responses', color: '#8b5cf6' },
-        { icon: FaVideo, title: 'Video Consultations', desc: 'Upcoming and past consultations', path: '/dashboard/patient/consultations', color: '#f59e0b' }
+    const features = [
+        {
+            icon: FaRobot,
+            title: 'AI Health Assistant',
+            description: 'Chat with AI to check symptoms and get triage recommendations',
+            path: '/dashboard/patient/ai-chat',
+            color: '#3b82f6'
+        },
+        {
+            icon: FaUserMd,
+            title: 'Find Doctors',
+            description: 'Search and consult with specialized doctors',
+            path: '/dashboard/patient/doctors',
+            color: '#14b8a6'
+        },
+        {
+            icon: FaCalendarAlt,
+            title: 'Book Consultation',
+            description: 'Schedule or start instant video consultation',
+            path: '/dashboard/patient/book',
+            color: '#f59e0b'
+        },
+        {
+            icon: FaHistory,
+            title: 'My Visits',
+            description: 'View visit history and download summaries',
+            path: '/dashboard/patient/visits',
+            color: '#8b5cf6'
+        },
+        {
+            icon: FaComments,
+            title: 'Messages',
+            description: 'Chat with your doctor about prescriptions',
+            path: '/dashboard/patient/messages',
+            color: '#ec4899'
+        },
+        {
+            icon: FaPrescription,
+            title: 'Prescriptions',
+            description: 'Upload and manage prescriptions, order medicines',
+            path: '/dashboard/patient/prescriptions',
+            color: '#10b981'
+        }
     ];
 
     return (
@@ -20,17 +58,22 @@ const PatientDashboard = () => {
             <div className="dashboard-header">
                 <div>
                     <h1>Welcome, {user?.name}</h1>
-                    <p className="subtitle">Patient Dashboard</p>
+                    <p className="subtitle">Your Health Dashboard</p>
                 </div>
                 <button onClick={logout} className="logout-btn">Logout</button>
             </div>
-            
-            <div className="tiles-grid">
-                {tiles.map((tile, idx) => (
-                    <div key={idx} className="dashboard-tile" onClick={() => navigate(tile.path)} style={{ borderColor: tile.color }}>
-                        <tile.icon className="tile-icon" style={{ color: tile.color }} />
-                        <h3>{tile.title}</h3>
-                        <p>{tile.desc}</p>
+
+            <div className="features-grid">
+                {features.map((feature, index) => (
+                    <div 
+                        key={index}
+                        className="feature-card"
+                        onClick={() => navigate(feature.path)}
+                        style={{ borderLeft: `4px solid ${feature.color}` }}
+                    >
+                        <feature.icon style={{ fontSize: '3rem', color: feature.color }} />
+                        <h3>{feature.title}</h3>
+                        <p>{feature.description}</p>
                     </div>
                 ))}
             </div>

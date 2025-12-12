@@ -1,112 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
 .hero-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Use the image from public folder, fallback to gradient */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Overlay is handled by the linear-gradient above, but keeping this if needed for other effects */
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(16, 24, 40, 0.4) 0%, rgba(29, 41, 57, 0.2) 100%);
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Optional: extra tint if image is too bright */
+    background: rgba(0, 0, 0, 0.2); 
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 900px;
-  padding: 3rem;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 1s ease-out;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
 }
 
-.hero-badge {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(20, 184, 166, 0.2);
-    border: 1px solid rgba(20, 184, 166, 0.5);
-    color: #2dd4bf;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #2FB3FF, #2EE0B6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Target direct paragraphs to avoid conflicts */
+.hero-content > p {
+    font-size: 1.8rem;
+    color: white;
     margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 500;
 }
 
-.hero-headline {
-  font-family: 'Inter', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #ffffff, #e2e8f0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.hero-subtext {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #cad5e0;
-  margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+/* Specific class for the subtext */
+.hero-content .hero-subtext {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .btn-primary {
-  padding: 1rem 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    padding: 14px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #2FB3FF 0%, #2EE0B6 100%);
+    border: none;
+    border-radius: 50px;
+    color: #0f172a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(47, 179, 255, 0.3);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
-  filter: brightness(1.1);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(46, 224, 182, 0.4);
 }
 
 @media (max-width: 768px) {
-  .hero-headline { font-size: 2.5rem; }
-  .hero-content { padding: 2rem 1.5rem; width: 90%; }
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-content > p {
+        font-size: 1.2rem;
+    }
 }
