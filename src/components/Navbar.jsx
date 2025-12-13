@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/logo.svg';
+import LanguageSwitcher from './LanguageSwitcher';
 import './Navbar.css';
 const Navbar = () => {
     const [click, setClick] = useState(false);
@@ -26,6 +27,9 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                         <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>Contact</Link>
+                    </li>
+                    <li className="nav-item">
+                        <LanguageSwitcher />
                     </li>
                 </ul>
             </div>
