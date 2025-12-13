@@ -1,0 +1,114 @@
+.language-switcher {
+    position: relative;
+    z-index: 1000;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(37, 99, 235, 0.05);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.lang-icon {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.lang-current {
+    font-size: 0.9rem;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: var(--text-primary);
+}
+
+.lang-option:hover {
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--primary-color);
+}
+
+.lang-flag {
+    font-size: 1.2rem;
+}
+
+.lang-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.google-more {
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+    cursor: default;
+}
+
+.google-more:hover {
+    background: transparent;
+    color: inherit;
+}
+
+@media (max-width: 960px) {
+    .language-switcher {
+        margin: 1rem 0;
+    }
+    
+    .lang-dropdown {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+}
