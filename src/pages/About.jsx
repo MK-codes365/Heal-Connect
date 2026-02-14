@@ -65,7 +65,7 @@ const About = () => {
                 <div className="container">
                     <div className="team-header">
                         <span className="section-pre-title">Meet the Team</span>
-                        <h2 className="section-title">The Dynamic Duo</h2>
+                        <h2 className="section-title">CodeX5</h2>
                         <p className="team-college">UIET Kanpur (CSJM University) • B-Tech IT</p>
                         <p className="team-tagline">"Combining code and compassion to heal rural India."</p>
                     </div>
@@ -88,7 +88,9 @@ const About = () => {
                                 <div className="member-overlay"></div>
                             </div>
                             <div className="member-info">
-                                <h3>Mukut Kumar</h3>                                <span className="member-role highlight">Frontend Developer</span>                                <p>Crafting intuitive and accessible user experiences.</p>
+                                <h3>Mukut Kumar</h3>
+                                <span className="member-role highlight">Frontend Developer</span>
+                                <p>Crafting intuitive and accessible user experiences.</p>
                             </div>
                         </div>
                     </div>
