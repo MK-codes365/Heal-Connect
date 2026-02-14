@@ -38,6 +38,11 @@ import MessagingMonitor from './pages/dashboards/admin/MessagingMonitor';
 import PlatformSettings from './pages/dashboards/admin/PlatformSettings';
 
 function App() {
+  React.useEffect(() => {
+    // Initialize mock data in localStorage
+    import('./utils/storage').then(module => module.initializeData());
+  }, []);
+
   return (
     <AuthProvider>
       <Router>
