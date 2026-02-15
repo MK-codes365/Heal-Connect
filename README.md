@@ -2,7 +2,7 @@
 
 > **"Bridging the Gap Between Rural Patients and Urban Specialists"**
 
-![HealConnect Banner](https://via.placeholder.com/1200x400/0f172a/2EE0B6?text=HealConnect+AI+Telemedicine)
+
 
 ## 🚀 Overview
 
@@ -87,23 +87,3 @@ Follow these steps to set up the project locally:
 3.  **Run Development Server**
 
     ```bash
-    npm run dev
-    ```
-
-4.  **Open in Browser**
-    Visit `http://localhost:5173` to see the app in action!
-
----
-
-## 👥 The "Fantastic Four" Team
-
-_Built at UIET Kanpur (CSJM University)_
-
-- 👨‍✈️ **Vimal Singh** - Team Leader & AI Developer
-- 👩‍💻 **Shreya Jain** - Backend Architect
-- 🗄️ **Madhu Madheyshiya** - Database Specialist
-- 🎨 **Mukut Kumar** - Frontend Developer
-
----
-
-_© 2025 HealConnect. Built for a healthier rural India._ 🇮🇳
